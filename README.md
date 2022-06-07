@@ -3,7 +3,7 @@
 ![](https://raw.githubusercontent.com/gokiimax/Perses/main/images/cmd_demo.png)
 
 ##[Follow me on Twitter](https://twitter.com/gokimax_x)
-##[Join the Discord Server](https://discord.com)
+##[Join the Discord Server]([https://discord.com](https://discord.gg/8tYayHMTvV))
 
 
 **Requirements:**
@@ -28,4 +28,4 @@ cd src/Server
 python3 perses.py
 ```
 
-Make sure to join my [discod(coming soon...)](https://discord.com) and feel free to dm me @maxシ#6858. Thanks for using Perses©
+Make sure to join my [discord]([https://discord.com](https://discord.gg/8tYayHMTvV)) and feel free to dm me @maxシ#6858. Thanks for using Perses©
