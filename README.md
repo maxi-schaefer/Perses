@@ -17,7 +17,7 @@
 - [x] - Dev / Coded by maxシ#6858
 - [ ] -  Created Community Server
 
-#❗- Installation:
+# ❗- Installation:
 ```
 git clone https://github.com/gokiimax/Perses.git
 cd Perses
