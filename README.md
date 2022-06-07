@@ -10,8 +10,9 @@
 - Windows 10/11
 - Python
 - PIP Installations
+
 <br>
-<br>
+
 - [x] - Updated Frequently
 - [x] - Dev / Coded by maxシ#6858
 - [ ] -  Created Community Server
