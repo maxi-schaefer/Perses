@@ -1,0 +1,4 @@
+pyfiglet
+requests
+pathlib
+typing
