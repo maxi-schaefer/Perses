@@ -24,7 +24,7 @@ cd Perses
 
 python3 -m pip install -r requirements.txt
 
-cd Server
+cd src/Server
 python3 perses.py
 ```
 
