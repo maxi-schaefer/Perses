@@ -14,7 +14,7 @@
 <br>
 
 - [x] - Updated Frequently
-- [x] - Dev / Coded by maxシ#6858
+- [x] - Developed / Coded by maxシ#6858
 - [ ] -  Created Community Server
 
 #❗- Installation:
