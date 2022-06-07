@@ -2,8 +2,8 @@
 ## Original CMD Print:
 ![](https://raw.githubusercontent.com/gokiimax/Perses/main/images/cmd_demo.png)
 
-##[Follow me on Twitter](https://twitter.com/gokimax_x)
-##[Join the Discord Server](https://discord.com)
+## [Follow me on Twitter](https://twitter.com/gokimax_x)
+## [Join the Discord Server](https://discord.com)
 
 
 **Requirements:**
