@@ -6,21 +6,17 @@ from lib.settings import get_path
 #=====================================================================#
 
 def rgb(r, g, b, text):
-    if get_path("useDefaultColors"):
         return "\033[38;2;{};{};{}m{}\033[38;2;255;255;255m".format(r, g, b, text)
-    else:
-        if r != 255 and g != 255 and b != 255:
-            return "\033[38;2;{};{};{}m{}\033[38;2;255;255;255m".format(get_path("red"), get_path("green"), get_path("blue"), text)
-        else:
-            return "\033[38;2;{};{};{}m{}\033[38;2;255;255;255m".format(r, g, b, text)
 
 #=====================================================================#
 
-def server_banner(text):
-    print(rgb(105, 67, 171, figlet_format(text, font="slant"))) # Good Fonts: sblood, graffiti, katakana, starwars, slant
-    print(rgb(105, 67, 171, f">> Type {rgb(255, 255, 255, 'help')}{rgb(105, 67, 171, ' to see all the available commands!')}"))
-    print(rgb(255, 255, 255, f"\n{'▬'*100}"))
-    print("\n")
+def server_banner(theme=None):
+    if theme == "neon":
+        print(server_bannerTheme(purple, neon))    
+
+def custom_banner(theme=None):
+    if theme == "neon":
+        print(custom_bannerTheme(purple, neon))   
 
 #=====================================================================#
 
@@ -33,20 +29,20 @@ def log(text):
 def clear():
     if os.name == "nt":
         os.system("cls")
-        server_banner("Perses")
+        server_banner("neon")
     else:
         os.system("clear")
-        server_banner("Perses")
+        server_banner("neon")
 
 #=====================================================================#
 
 def clear_main():
     if os.name == "nt":
         os.system("cls")
-        banner("Perses")
+        banner("neon")
     else:
         os.system("clear")
-        banner("Perses")
+        banner("neon")
 
 #=====================================================================#
 
@@ -58,21 +54,28 @@ def clear_custom():
 
 #=====================================================================#
 
+def purple(text):
+    os.system(""); fade = "" 
+    red = 255
+    for line in text.splitlines():
+        fade += (f"\033[38;2;{red};0;180m{line}\033[0m\n")
+        if not red == 0:
+            red -= 20
+            if red < 0:
+                red = 0
+    return fade
 
-def banner(text):
-    print(rgb(105, 67, 171, figlet_format(text, font="slant"))) # Good Fonts: sblood, graffiti, katakana, starwars, slant
-    print(rgb(105, 67, 171, f"By: {rgb(255, 255, 255, 'gokimax')}\n{rgb(105, 67, 171, 'For more visit: https://github.com/gokiimax')}"))
-    print(rgb(255, 255, 255, f"\n{'▬'*100}"))
-    print(rgb(105, 67, 171,"\n╔══════════════════════════╦═══════════════════════╦═════════════════════╗"))
-    print(rgb(105, 67, 171,"║     EDUCATIONAL          ║       DISCORD         ║       CREDITS       ║"))
-    print(rgb(105, 67, 171,"║                          ║                       ║                     ║"))
-    print(rgb(105, 67, 171,"║ [1] Start RAT Server     ║ [5] Hypesquad Changer ║     [7] Github      ║"))
-    print(rgb(105, 67, 171,"║ [2] Start Botnet Server  ║ [6] Send Nitro Emoji  ║     [8] Twitter     ║"))
-    print(rgb(105, 67, 171,"║ [3] IP lookup            ║                       ║     [9] Exit        ║"))
-    print(rgb(105, 67, 171,"║ [4] Domain to IPv4       ║                       ║                     ║"))
-    print(rgb(105, 67, 171,"║                          ║                       ║                     ║"))
-    print(rgb(105, 67, 171,"╚══════════════════════════╩═══════════════════════╩═════════════════════╝"))
-    print("\n")
+def neon(text):
+    os.system(""); fade = ""
+    for line in text.splitlines():
+        red = 255
+        for char in line:
+            red -= 2
+            if red > 255:
+                red = 255
+            fade += (f"\033[38;2;{red};0;255m{char}\033[0m")
+        fade += "\n"
+    return fade
 
 #=====================================================================#
 
@@ -81,10 +84,9 @@ def set_console_title(text:str):
 
 #=====================================================================#
 
-def custom_banner(text):
-    print(rgb(105, 67, 171, figlet_format(text, font="slant"))) # Good Fonts: sblood, graffiti, katakana, starwars, slant
-    print(rgb(105, 67, 171, f"By: {rgb(255, 255, 255, 'gokimax')}\n{rgb(105, 67, 171, 'For more visit: https://github.com/gokiimax')}"))
-    print(rgb(255, 255, 255, f"\n{'▬'*100}"))
+def banner(theme=None):
+    if theme == "neon":
+        print(bannerTheme(purple, neon))
 
 #=====================================================================#
 
@@ -102,21 +104,61 @@ commands = [
     ["help", "You obviously know what this does"]
 ]
 
-
 #=====================================================================#
 
 # Help Command
 def help_command():
+    help = ""
     total = 0
     print(rgb(255, 255, 255, f"\n{'▬'*50}"))
-    print(rgb(255, 255, 255, "\n\t× Riko | Help ×\n"))
+    print(rgb(255, 255, 255, "\n\t× Perses | Help ×\n"))
     # loop through all available commands
     for x in commands:
-        print(rgb(105, 67, 171, f"[{total}] × {commands[total][0]} | {commands[total][1]} ×"))
+        help += f"\n[{total}] × {commands[total][0]} | {commands[total][1]} ×"
         total += 1
+    help += f"\n[{total}] × Anything | Will run a command on the Targets PC like command prompt ×"
 
-    print(rgb(105, 67, 171, f"[{total}] × Anything | Will run a command on the Targets PC like command prompt ×"))
+    print(purple(help))
     print(rgb(255, 255, 255, f"\n{'▬'*50}"))
 
 #=====================================================================#
 
+def bannerTheme(type1, type2):
+    return type1(f'''
+    
+                                    ██████╗ ███████╗██████╗ ███████╗███████╗███████╗
+                                    ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝
+                                    ██████╔╝█████╗  ██████╔╝███████╗█████╗  ███████╗
+                                    ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║██╔══╝  ╚════██║
+> Created by gokimax                ██║     ███████╗██║  ██║███████║███████╗███████║
+> Discord:maxシ#6858                ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝''')+type2(f'''
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       EDUCATIONAL PURPOSE                  |           DISCORD               |            CREDITS
+[1] Start RAT Server                        | [5] Hypesquad Changer           | [7] Github
+[2] Start Botnet Server                     | [6] Send Nitro Emoji            | [8] Twitter
+[3] IP Lookup                               |                                 | [9] Exit
+[4] Domain to IPv4                          |                                 |
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────''')
+
+def server_bannerTheme(type1, type2):
+    return type1(f'''
+    
+                                    ██████╗ ███████╗██████╗ ███████╗███████╗███████╗
+                                    ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝
+                                    ██████╔╝█████╗  ██████╔╝███████╗█████╗  ███████╗
+                                    ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║██╔══╝  ╚════██║
+> Created by gokimax                ██║     ███████╗██║  ██║███████║███████╗███████║
+> Discord:maxシ#6858                ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝''')+type2(f'''
+                                    Type 'help' to see a list of commands!
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────''')
+
+def custom_bannerTheme(type1, type2):
+    return type1(f'''
+    
+                                    ██████╗ ███████╗██████╗ ███████╗███████╗███████╗
+                                    ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██╔════╝
+                                    ██████╔╝█████╗  ██████╔╝███████╗█████╗  ███████╗
+                                    ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║██╔══╝  ╚════██║
+> Created by gokimax                ██║     ███████╗██║  ██║███████║███████╗███████║
+> Discord:maxシ#6858                ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝''')+type2(f'''
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────''')

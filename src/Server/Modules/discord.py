@@ -1,6 +1,5 @@
 import requests
-from lib.terminal import rgb, clear_main
-from lib.settings import get_path
+from lib.terminal import rgb, clear_main, log
 import time
 
 #=====================================================================#
@@ -22,7 +21,7 @@ def hypeSquadChanger():
 
 #=====================================================================#
 
-def nitro_emojii():
+def nitro_emoji():
     emoji_link = input(f"{rgb(105, 67, 171, '~# ')}Emoji Link: ")
     if not str(emoji_link).startswith("https://"):
         print("[-] Invalid link")
@@ -31,5 +30,7 @@ def nitro_emojii():
     channelId = input(f"{rgb(105, 67, 171, '~# ')}Channel Id: ")
     authorize_header = {'Authorization': token}
     requests.post(f'https://discordapp.com/api/v6/channels/{channelId}/messages', headers=authorize_header, json={'content': f'{emoji_link}'})
+    log("Emoji sent...")
+    clear_main()
 
 #=====================================================================#

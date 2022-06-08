@@ -1,7 +1,7 @@
 import socket
 import json
 import base64
-from lib.terminal import rgb, clear, help_command, set_console_title
+from lib.terminal import rgb, clear, help_command, set_console_title, server_banner
 
 class Server:
 #=====================================================================#

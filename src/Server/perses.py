@@ -1,10 +1,10 @@
 import sys
 from time import sleep
-from lib.terminal import rgb, log, clear, clear_main, clear_custom, set_console_title
+from lib.terminal import rgb, log, clear, clear_main, clear_custom, set_console_title, banner
 from lib.utils import ip_lookup, domain_name, open_link, load
 from lib.server import Server
 from lib.settings import get_path, setup_config
-from Modules.discord import hypeSquadChanger, nitro_emojii
+from Modules.discord import hypeSquadChanger, nitro_emoji
 
 # Setup Config
 setup_config()
@@ -17,7 +17,8 @@ done = 'false'
 set_console_title("Perses | Loading...")
 
 def TakeCommand():
-    clear_main()
+    clear_custom()
+    banner("neon")
     while True:
         try:
             command = input(rgb(105, 67, 171, f"┌── {rgb(255, 255, 255, '[')}{rgb(105, 67, 171, f'root@perses')}{rgb(255, 255, 255, ']')}\n{rgb(105, 67, 171, f'└──────#')} "))
@@ -44,7 +45,7 @@ def TakeCommand():
                 #=- Hypesquad changer -=#
                 hypeSquadChanger()
             elif command == "6":
-                nitro_emojii()
+                nitro_emoji()
             elif command ==  "7":
                 #=- Credits: Github -=#
                 log("Opening browser...")

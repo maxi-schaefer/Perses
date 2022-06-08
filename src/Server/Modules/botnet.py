@@ -1,11 +1,10 @@
 #!/usr/bin
-import os
 from threading import Thread
 from time import sleep
 import socket
-import platform, signal
+import signal
 from typing import Union, Tuple
-from lib.terminal import clear_custom, custom_banner, rgb, set_console_title
+from lib.terminal import clear_custom, custom_banner, rgb, set_console_title, neon
 from lib.settings import get_path
 
 commands = [
@@ -29,7 +28,7 @@ class BotnetServer():
         signal.signal(signal.SIGINT, self.exit_gracefully)
         signal.signal(signal.SIGTERM, self.exit_gracefully)
         
-        custom_banner("Perses")
+        custom_banner("neon")
         self.all_connections = []
         self.all_address = []
         self.stop = False
@@ -72,10 +71,12 @@ class BotnetServer():
 
     def _print_help(self):
         total = 0
+        help = ""
         print(f"{rgb(255, 255, 255, '▬'*10)}{rgb(105, 67, 171, ' Help ')}{rgb(255, 255, 255, '▬'*10)}")
         for x in commands:
-            print(rgb(105, 67, 171, f"[{total}] × {commands[total][0]} | {commands[total][1]} ×"))
+            help += f"\n[{total}] × {commands[total][0]} | {commands[total][1]} ×"
             total += 1
+        print(neon(help))
         print(f"{rgb(255, 255, 255, '▬'*10)}{rgb(105, 67, 171, ' Help ')}{rgb(255, 255, 255, '▬'*10)}")
 
 #=====================================================================#
@@ -111,7 +112,7 @@ class BotnetServer():
             self._print_help()
         elif cmd == "clear":
             clear_custom()
-            custom_banner("Perses")
+            custom_banner("neon")
         elif cmd == "exit":
             self.exit_gracefully()
         elif cmd == "update":

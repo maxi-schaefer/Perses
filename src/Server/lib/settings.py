@@ -5,12 +5,10 @@ import json
 
 ServerIP = "localhost"
 ServerPort = 187
-useDefaultColors = True
-defaultColors = [105, 67, 171]
 
 #============================- Main Settings -============================#
 
-config = {"ServerIP": ServerIP, "ServerPort": ServerPort, "useDefaultColors": useDefaultColors,"red": defaultColors[0], "green": defaultColors[1], "blue": defaultColors[2]}
+config = {"ServerIP": ServerIP, "ServerPort": ServerPort}
 
 def setup_config():
     path = Path("config.json")

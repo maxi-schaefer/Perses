@@ -66,7 +66,7 @@ class Loader:
 
 def load(loadingText:str):
     clear_custom()
-    custom_banner("Perses")
+    custom_banner("neon")
     set_console_title(f"Perses | {loadingText}")
     loader = Loader(loadingText).start()
     for i in range(10):
