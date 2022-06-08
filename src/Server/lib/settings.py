@@ -6,10 +6,9 @@ import json
 ServerIP = "localhost"
 ServerPort = 187
 
-#============================- Main Settings -============================#
+#=====================================================================#
 
 config = {"ServerIP": ServerIP, "ServerPort": ServerPort}
-
 def setup_config():
     path = Path("config.json")
     if(path.is_file()):

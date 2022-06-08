@@ -5,6 +5,7 @@ from lib.utils import ip_lookup, domain_name, open_link, load
 from lib.server import Server
 from lib.settings import get_path, setup_config
 from Modules.discord import hypeSquadChanger, nitro_emoji, statusChanger
+from lib.richpresence import RichPresence
 
 # Setup Config
 setup_config()
@@ -81,6 +82,8 @@ def setup():
     load("Loading Modules...")
     sleep(1)
     set_console_title("Perses | Dashboard")
+    app = RichPresence("983799002640306247")
+    app.update()
     TakeCommand()
 
 if __name__ == "__main__":
