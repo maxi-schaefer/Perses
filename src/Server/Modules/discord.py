@@ -1,5 +1,7 @@
+from site import execsitecustomize
 import requests
 from lib.terminal import rgb, clear_main, log
+from lib.utils import getheaders
 import time
 
 #=====================================================================#
@@ -34,3 +36,17 @@ def nitro_emoji():
     clear_main()
 
 #=====================================================================#
+
+def statusChanger():
+    token = input(f"{rgb(105, 67, 171, '~# ')}Token: ")
+    custom_text = input(f"{rgb(105, 67, 171, '~# ')}Status Text: ")
+    emoji = input(f"{rgb(105, 67, 171, '~# ')}Status Emoji: ")
+    custom_status = {"custom_status": {"text": custom_text, "emoji_name": emoji}}    
+    authorize_header = {'Authorization': token}
+    try:
+        requests.patch("https://discord.com/api/v9/users/@me/settings", headers=authorize_header, json=custom_status)
+        log(f"Status changed to: '{custom_text}'!")
+    except Exception as e:
+        print(f"[-] An Exception occured: {e}")
+    time.sleep(2)
+    clear_main()

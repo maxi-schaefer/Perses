@@ -134,9 +134,9 @@ def bannerTheme(type1, type2):
 > Discord:maxシ#6858                ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝''')+type2(f'''
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
        EDUCATIONAL PURPOSE                  |           DISCORD               |            CREDITS
-[1] Start RAT Server                        | [5] Hypesquad Changer           | [7] Github
-[2] Start Botnet Server                     | [6] Send Nitro Emoji            | [8] Twitter
-[3] IP Lookup                               |                                 | [9] Exit
+[1] Start RAT Server                        | [5] Hypesquad Changer           | [8] Github
+[2] Start Botnet Server                     | [6] Send Nitro Emoji            | [9] Twitter
+[3] IP Lookup                               | [7] Status Changer              | [10] Exit
 [4] Domain to IPv4                          |                                 |
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────''')
 

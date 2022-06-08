@@ -6,6 +6,7 @@ from threading import Thread
 from time import sleep
 from itertools import cycle
 from shutil import get_terminal_size
+import random
 
 #=====================================================================#
 
@@ -73,3 +74,43 @@ def load(loadingText:str):
         sleep(0.25)
     set_console_title(f"Perses | Done!")
     loader.stop()
+
+#=====================================================================#
+
+heads = [
+    {
+        "Content-Type": "application/json",
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:76.0) Gecko/20100101 Firefox/76.0'
+    },
+
+    {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"
+    },
+
+    {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (X11; Debian; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"
+    },
+
+    {
+        "Content-Type": "application/json",
+        'User-Agent': 'Mozilla/5.0 (Windows NT 3.1; rv:76.0) Gecko/20100101 Firefox/69.0'
+    },
+
+    {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (X11; Debian; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/76.0"
+    },
+
+    {
+       "Content-Type": "application/json",
+       "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"
+    }
+]
+
+def getheaders(token=None):
+    headers = random.choice(heads)
+    if token:
+        headers.update({"Authorization": token})
+    return headers
