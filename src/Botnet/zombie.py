@@ -9,7 +9,7 @@ class Client():
 
 #=====================================================================#
 
-    def __init__(self, connect:Tuple[str, int]=("localhost", 420)) -> None:
+    def __init__(self, connect:Tuple[str, int]=("localhost", 187)) -> None:
         signal.signal(signal.SIGINT, self.exit_gracefully)
         signal.signal(signal.SIGTERM, self.exit_gracefully)
         self.stop = False

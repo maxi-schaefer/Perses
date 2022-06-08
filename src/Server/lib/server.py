@@ -73,6 +73,7 @@ class Server:
             return rgb(255, 255, 255, result)
 
     #=====================================================================#
+    
     def run(self):
         while True:
             command = input(rgb(105, 67, 171, f"┌── {rgb(255, 255, 255, '[')}{rgb(105, 67, 171, f'perses@{self.address[0]}')}{rgb(255, 255, 255, ']')}\n{rgb(105, 67, 171, f'└──────$')} "))
