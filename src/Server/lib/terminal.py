@@ -67,7 +67,7 @@ def banner(text):
     print(rgb(105, 67, 171,"║     EDUCATIONAL          ║       DISCORD         ║       CREDITS       ║"))
     print(rgb(105, 67, 171,"║                          ║                       ║                     ║"))
     print(rgb(105, 67, 171,"║ [1] Start RAT Server     ║ [5] Hypesquad Changer ║     [7] Github      ║"))
-    print(rgb(105, 67, 171,"║ [2] Start Botnet Server  ║ [6] Mass DM Friends   ║     [8] Twitter     ║"))
+    print(rgb(105, 67, 171,"║ [2] Start Botnet Server  ║ [6] Send Nitro Emoji  ║     [8] Twitter     ║"))
     print(rgb(105, 67, 171,"║ [3] IP lookup            ║                       ║     [9] Exit        ║"))
     print(rgb(105, 67, 171,"║ [4] Domain to IPv4       ║                       ║                     ║"))
     print(rgb(105, 67, 171,"║                          ║                       ║                     ║"))

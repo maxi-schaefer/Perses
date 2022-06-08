@@ -1,6 +1,6 @@
 import requests
 from lib.terminal import rgb, clear_main
-from lib.settings import get_path, setup_emojis
+from lib.settings import get_path
 import time
 
 #=====================================================================#
