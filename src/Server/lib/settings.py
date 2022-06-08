@@ -19,8 +19,12 @@ def setup_config():
     else:
         with open("config.json", "w") as f:
             json.dump(config, f)
-    
+
+#=====================================================================#
+
 def get_path(path):
     with open('config.json', 'r') as f:
         config = json.load(f)
     return config[path]
+
+#=====================================================================#

@@ -2,3 +2,4 @@ pyfiglet
 requests
 pathlib
 typing
+selenium

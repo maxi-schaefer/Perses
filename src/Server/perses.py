@@ -4,6 +4,7 @@ from lib.terminal import rgb, log, clear, clear_main, clear_custom, set_console_
 from lib.utils import ip_lookup, domain_name, open_link, load
 from lib.server import Server
 from lib.settings import get_path, setup_config
+from Modules.discord import hypeSquadChanger, nitro_emojii
 
 # Setup Config
 setup_config()
@@ -40,19 +41,21 @@ def TakeCommand():
                 #=- Domain to ip -=#
                 domain_name()
             elif command ==  "5":
-                #=- Update Styles -=#
-                clear_main()
-            elif command ==  "6":
+                #=- Hypesquad changer -=#
+                hypeSquadChanger()
+            elif command == "6":
+                nitro_emojii()
+            elif command ==  "7":
                 #=- Credits: Github -=#
                 log("Opening browser...")
                 sleep(2)
                 open_link("https://github.com/gokiimax")    
-            elif command ==  "7":
+            elif command ==  "8":
                 #=- Credits: Twitter -=#
                 log("Opening browser...")
                 sleep(2)
                 open_link("https://twitter.com/gokimax_x")
-            elif command ==  "8":
+            elif command ==  "9":
                 #=- Exit Application -=#
                 exit()
             elif command ==  "clear":
