@@ -3,7 +3,7 @@
 ![](https://raw.githubusercontent.com/gokiimax/Perses/main/images/cmd_demo.png)
 
 ## [Follow me on Twitter](https://twitter.com/gokimax_x)
-## [Join the Discord Server](https://discord.gg/8tYayHMTvV)
+## [Join the Discord Server](https://discord.gg/yVWygKS3Xn)
 
 
 **Requirements:**
